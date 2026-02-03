@@ -1,0 +1,7 @@
+{
+  "name": "Éclat d'Art - Galerie Privée",
+  "description": "Une landing page moderne et épurée pour une artiste professionnelle, mettant en valeur ses tableaux avec une élégance digne d'une galerie d'art contemporain.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
