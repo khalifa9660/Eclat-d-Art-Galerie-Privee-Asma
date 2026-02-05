@@ -1,16 +1,19 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
 import About from './components/About';
 import ArtAdvisor from './components/ArtAdvisor';
 import Footer from './components/Footer';
+import ReservationView from './components/ReservationView';
 
 function App() {
+  const [isReservationOpen, setIsReservationOpen] = useState(false);
+
   return (
     <div className="relative min-h-screen">
-      <Header />
+      <Header onOpenReservation={() => setIsReservationOpen(true)} />
       <main>
         <Hero />
         
@@ -34,7 +37,10 @@ function App() {
             <p className="text-gray-500 font-light mb-12">
               Vous avez un projet spécifique pour votre intérieur ou votre entreprise ? Je réalise des œuvres sur commande pour s'adapter parfaitement à vos dimensions et vos couleurs.
             </p>
-            <button className="bg-black text-white px-12 py-5 text-sm uppercase tracking-widest hover:bg-gray-800 transition-all">
+            <button 
+              onClick={() => setIsReservationOpen(true)}
+              className="bg-black text-white px-12 py-5 text-sm uppercase tracking-widest hover:bg-gray-800 transition-all"
+            >
               Prendre rendez-vous
             </button>
           </div>
@@ -43,6 +49,12 @@ function App() {
       
       <Footer />
       <ArtAdvisor />
+
+      {/* Salon de Réservation */}
+      <ReservationView 
+        isOpen={isReservationOpen} 
+        onClose={() => setIsReservationOpen(false)} 
+      />
     </div>
   );
 }

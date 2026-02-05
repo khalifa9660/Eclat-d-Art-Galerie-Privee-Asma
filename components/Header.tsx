@@ -1,7 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onOpenReservation: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onOpenReservation }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -31,7 +35,10 @@ const Header: React.FC = () => {
           <a href="#contact" className="hover:text-black transition-colors">Contact</a>
         </nav>
 
-        <button className="text-sm font-medium border border-gray-900 px-4 py-2 hover:bg-black hover:text-white transition-all">
+        <button 
+          onClick={onOpenReservation}
+          className="text-sm font-medium border border-gray-900 px-4 py-2 hover:bg-black hover:text-white transition-all active:scale-95"
+        >
           Réserver une œuvre
         </button>
       </div>
