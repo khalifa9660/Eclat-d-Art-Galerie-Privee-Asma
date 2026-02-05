@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative z-10 text-center max-w-4xl px-4">
-        <h2 className="text-gray-600 uppercase tracking-[0.5em] text-sm mb-6 animate-pulse">Collection 2024</h2>
+        <h2 className="text-gray-600 uppercase tracking-[0.5em] text-sm mb-6 animate-pulse">Collection 2026</h2>
         <h1 className="text-5xl md:text-8xl font-serif mb-8 leading-tight">
           L'essence de l'émotion <br />
           <span className="italic">sur toile.</span>
@@ -46,5 +46,6 @@ const Hero: React.FC = () => {
     </section>
   );
 };
+
 
 export default Hero;
